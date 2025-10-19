@@ -16,8 +16,8 @@ def call(Map cfg = [:]) {
   def GIT_BRANCH       = cfg.get('gitBranch', 'main')
   def DOCKERFILE       = cfg.get('dockerfile', 'Dockerfile')
   def IMAGE_TAG        = cfg.get('imageTag', env.BUILD_NUMBER)
-  def DOCKER_AGENT     = cfg.get('dockerAgent', 'node1')     // where Docker can run
-  def DEPLOY_AGENT     = cfg.get('deployAgent', 'built-in')  // where kubectl can run
+  def DOCKER_AGENT     = cfg.get('dockerAgent', 'any')     // where Docker can run
+  def DEPLOY_AGENT     = cfg.get('deployAgent', 'any')  // where kubectl can run
   def CLUSTER_NAME     = cfg.get('clusterName', null)        // if set, we update kubeconfig
   def GIT_CRED_ID      = cfg.get('gitCredId', null)          // needed if repo is private
 
